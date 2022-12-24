@@ -206,10 +206,10 @@ html, body {
 
 @media screen and (max-width: 600px) {
     .container {
-        width: 270px;
+        width: 290px;
     }
     .main-content > img {
-        width: 300px;
+        width: 200px;
     }
     .main-content > p {
         font-size: small;
