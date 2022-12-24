@@ -1,4 +1,4 @@
 setTimeout(() => {
     document.getElementById("loading").style.display = "none";
     document.getElementById("content").style.display = "flex";
-}, 1000);
+}, 3000);
