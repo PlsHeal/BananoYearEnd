@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html, body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #04042C;
+}
+
+.container {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid 2px red;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to bottom right, red, purple);
+    border-radius: 20px;
+    max-height: 400px;
+    max-width: 600px;
+    animation: changeColor 3s 5s infinite ease;
+}
+
+.container::before {
+    font-size: medium;
+    position: absolute;
+    content: "Online Caroling";
+    background-color: white;
+    bottom: 78.5%; 
+    background-image: linear-gradient(90deg, red, purple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    z-index: 3;
+}
+
+.container::after {
+    content: "Online CarolingII";
+    position: absolute;
+    bottom: 78.5%;
+    background-color: #04042C;
+    z-index: 2;
+    color: #04042C;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+}
+
+.loading-container > span {
+    margin: 10px;
+    font-size: medium;
+    background-image: linear-gradient(90deg, red, purple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.load {
+    display: grid;
+    height: 20px;
+    grid-template-columns: repeat(5, 20px);
+    gap: 5px;
+}
+
+.load > div {
+    background-image: linear-gradient(to bottom right, red, purple);
+    border: 1px solid black;
+    animation: flip calc(1.25 * 1s) calc(var(--delay) * 1s) infinite ease;
+    -webkit-animation: flip calc(1.25 * 1s) calc(var(--delay) * 1s) infinite ease;;
+}
+
+.load > div:nth-of-type(1) {
+    --delay: 0.25;
+}
+
+.load > div:nth-of-type(2) {
+    --delay: 0.5;
+}
+
+.load > div:nth-of-type(3) {
+    --delay: 0.75;
+}
+
+.load > div:nth-of-type(4) {
+    --delay: 1;
+}
+
+.load > div:nth-of-type(5) {
+    --delay: 1.25;
+}
+
+.main-content {
+    width: 600px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.main-content > img {
+    margin: 20px;
+    border-radius: 10px;
+    width: 400px;
+    transition: opacity z-index 5s;
+}
+
+.main-content > img:hover {
+    opacity: 0.6;
+}
+
+.main-content > p {
+    background-image: linear-gradient(90deg, red, purple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    line-height: 25px;
+}
+
+.main-content > p > span {
+    background-image: linear-gradient(90deg, Red, yellow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.main-content > input {
+    border: solid 1px;
+    margin: 10px;
+}
+
+.main-content > input:hover {
+    border: solid 1px;
+    border-image-slice: 3;
+    border-image-source: linear-gradient(to bottom right, red, purple);
+}
+
+.main-content > a > img {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #04042C;
+}
+
+@keyframes flip {
+    0% {
+        -webkit-transform: perspective(40px) rotate(-180deg);
+        transform: perspective(40px) rotateY(-180deg);
+    }
+    50% {
+        -webkit-transform: perspective(40px) rotateY(0deg);
+        transform: perspective(40px) rotateY(0deg);
+    }
+}
+
+@-webkit-keyframes flip {
+    0% {
+      -webkit-transform: perspective(40px) rotateY(-180deg);
+              transform: perspective(40px) rotateY(-180deg); 
+    }
+    50% {
+      -webkit-transform: perspective(40px) rotateY(0deg);
+              transform: perspective(40px) rotateY(0deg); 
+    } }
+
+@keyframes changeColor {
+    0% {
+        border-image-source: linear-gradient(to bottom right, purple, red);
+    }
+    25% {
+        border-image-source: linear-gradient(to bottom right, red, purple);
+    }
+    50% {
+        border-image-source: linear-gradient(to bottom right, purple, blue);
+    }
+    75% {
+        border-image-source: linear-gradient(to bottom right, red, purple);
+    }
+    100% {
+        border-image-source: linear-gradient(to bottom right, purple, red);
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1300px) {
+    .container::before {
+        content: "";
+    }
+    
+    .container::after {
+        content: "";
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 270px;
+    }
+    .main-content > img {
+        width: 200px;
+    }
+    .main-content > p {
+        font-size: small;
+        line-height: 40px;
+    }
+    .container::before {
+        content: "";
+    }
+    
+    .container::after {
+        content: "";
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container::before {
+        content: "";
+    }
+    
+    .container::after {
+        content: "";
+    }
+}
