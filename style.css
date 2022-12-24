@@ -20,7 +20,7 @@ html, body {
     border-image-slice: 1;
     border-image-source: linear-gradient(to bottom right, red, purple);
     border-radius: 20px;
-    max-height: 400px;
+    height: 400px;
     max-width: 600px;
     animation: changeColor 3s 5s infinite ease;
 }
@@ -30,7 +30,7 @@ html, body {
     position: absolute;
     content: "Online Caroling";
     background-color: white;
-    bottom: 78.5%; 
+    bottom: 78%; 
     background-image: linear-gradient(90deg, red, purple);
     -webkit-background-clip: text;
     background-clip: text;
@@ -41,7 +41,7 @@ html, body {
 .container::after {
     content: "Online CarolingII";
     position: absolute;
-    bottom: 78.5%;
+    bottom: 78%;
     background-color: #04042C;
     z-index: 2;
     color: #04042C;
